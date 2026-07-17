@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem; /* keep anchored sections clear of the sticky nav */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-white text-charcoal font-body antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #1e6b3c;
+  color: #ffffff;
+}
+
+/* Visible, on-brand keyboard focus */
+:focus-visible {
+  outline: 2px solid #1e6b3c;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Form fields */
+.field {
+  @apply w-full rounded-xl border border-line bg-white px-4 py-3 text-[15px] text-ink
+    placeholder:text-slate/60 transition-colors duration-200
+    focus:border-pine focus:outline-none focus:ring-2 focus:ring-pine/15;
+}
